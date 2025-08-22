@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real-Time Weather Dashboard</title>
+    <meta name="description" content="Real-time weather dashboard with search, forecast, and geolocation" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="site-title">Weather Dashboard</h1>
+        <div class="unit-toggle" role="group" aria-label="Temperature unit toggle">
+          <button id="unitC" class="toggle-btn" data-unit="metric" aria-pressed="true">°C</button>
+          <button id="unitF" class="toggle-btn" data-unit="imperial" aria-pressed="false">°F</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="search-section" aria-labelledby="search-title">
+        <h2 id="search-title" class="section-title">Search City</h2>
+        <form id="searchForm" class="search-form" novalidate>
+          <input id="searchInput" type="text" placeholder="Enter city (e.g., London)" aria-label="City name" />
+          <button type="submit" class="primary-btn">Search</button>
+        </form>
+        <p id="searchHelp" class="subtle">Tip: Include country code for accuracy (e.g., Paris, FR).</p>
+        <div id="searchError" class="error-message hidden" role="alert"></div>
+        <div id="searchResult" class="cards"></div>
+        <div id="searchEmpty" class="empty-state">Search a city to see its weather.</div>
+      </section>
+
+      <section class="location-section" aria-labelledby="location-title">
+        <h2 id="location-title" class="section-title">Your Location</h2>
+        <div id="locationContainer" class="cards"></div>
+        <div id="locationLoading" class="loader hidden" aria-hidden="true"></div>
+      </section>
+
+      <section class="predefined-section" aria-labelledby="predefined-title">
+        <h2 id="predefined-title" class="section-title">Cities</h2>
+        <div id="citiesContainer" class="grid"></div>
+        <div id="citiesLoading" class="loader" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p class="muted">Data by OpenWeatherMap • Icons via OpenWeather</p>
+    </footer>
+
+    <script src="./config.js" ></script>
+    <script src="./app.js" defer></script>
+  </body>
+  </html>
+
+
+
